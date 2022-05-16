@@ -5,8 +5,9 @@ btnRestart.addEventListener('click', restartClick)
 
 let turn = document.getElementById('vez-jogar');
 
+
 function startClick() {
-    let mainContainer = document.getElementById('main-container');
+    let mainContainer = document.getElementById('main-container');    
     mainContainer.style.display = 'flex'
     btnStart.style.display = 'none'
 }
@@ -27,7 +28,31 @@ function restartClick() {
 }
 
 
-let pos1 = document.getElementById('pos1')
+
+let position = document.getElementsByClassName('grid-item');
+let elemento = document.getElementsByClassName('elemento');
+for (let i = 0; i < 9; i++) {
+    position[i].addEventListener('click', itemClick);
+    function itemClick() {
+        if(turn.innerText == 'X') {
+            elemento[i].innerText = 'X' 
+            position[i].style.color = 'blue' 
+            turn.innerText = 'O'   
+        } else if (turn.innerText == 'O') {
+            elemento[i].innerText = 'O'
+            position[i].style.color = 'red'  
+            turn.innerText = 'X'   
+        }
+    }    
+}
+
+
+
+
+
+
+
+/*let pos1 = document.getElementById('pos1')
 pos1.addEventListener('click', item1Click)
 function item1Click() {  
     if(turn.innerText == 'X') {
@@ -152,5 +177,5 @@ function item9Click() {
         pos9.style.color = 'red'  
         turn.innerText = 'X'   
     } 
-}
+}*/
 
