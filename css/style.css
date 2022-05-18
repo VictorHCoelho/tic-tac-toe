@@ -84,3 +84,20 @@ footer p a {
 .btn:hover {
     background-color: rgb(255, 137, 137);
 }
+
+.box {
+    height: 150px;
+    width: 150px;
+    font-size: 100px;
+    text-align: center;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(202, 191, 177);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: rgb(223, 217, 209);
+}

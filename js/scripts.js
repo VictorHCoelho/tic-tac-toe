@@ -1,181 +1,165 @@
+let pos1 = document.getElementById('b1');
+let pos2 = document.getElementById('b2');
+let pos3 = document.getElementById('b3');
+let pos4 = document.getElementById('b4');
+let pos5 = document.getElementById('b5');
+let pos6 = document.getElementById('b6');
+let pos7 = document.getElementById('b7');
+let pos8 = document.getElementById('b8');
+let pos9 = document.getElementById('b9');
+
 let btnStart = document.getElementById('btn-start');
-btnStart.addEventListener('click', startClick);
 let btnRestart = document.getElementById('btn-restart');
-btnRestart.addEventListener('click', restartClick)
+let mainContainer = document.getElementById('main-container');
 
 let turn = document.getElementById('vez-jogar');
 
+btnStart.addEventListener('click', startClick);
+btnRestart.addEventListener('click', restartClick);
+pos1.addEventListener('click', item1);
+pos2.addEventListener('click', item2);
+pos3.addEventListener('click', item3);
+pos4.addEventListener('click', item4);
+pos5.addEventListener('click', item5);
+pos6.addEventListener('click', item6);
+pos7.addEventListener('click', item7);
+pos8.addEventListener('click', item8);
+pos9.addEventListener('click', item9);
 
 function startClick() {
-    let mainContainer = document.getElementById('main-container');    
-    mainContainer.style.display = 'flex'
-    btnStart.style.display = 'none'
+    btnStart.style.display = 'none';
+    mainContainer.style.display = 'flex';
 }
 
 function restartClick() {
-    let mainContainer = document.getElementById('main-container');
-    mainContainer.style.display = 'none'
-    btnStart.style.display = 'block'
-    pos1.innerHTML = '<p> </p>' 
-    pos2.innerHTML = '<p> </p>' 
-    pos3.innerHTML = '<p> </p>' 
-    pos4.innerHTML = '<p> </p>' 
-    pos5.innerHTML = '<p> </p>' 
-    pos6.innerHTML = '<p> </p>' 
-    pos7.innerHTML = '<p> </p>' 
-    pos8.innerHTML = '<p> </p>' 
-    pos9.innerHTML = '<p> </p>' 
+    btnStart.style.display = 'block';
+    mainContainer.style.display = 'none';
 }
 
-
-
-let position = document.getElementsByClassName('grid-item');
-let elemento = document.getElementsByClassName('elemento');
-for (let i = 0; i < 9; i++) {
-    position[i].addEventListener('click', itemClick);
-    function itemClick() {
-        if(turn.innerText == 'X') {
-            elemento[i].innerText = 'X' 
-            position[i].style.color = 'blue' 
-            turn.innerText = 'O'   
-        } else if (turn.innerText == 'O') {
-            elemento[i].innerText = 'O'
-            position[i].style.color = 'red'  
-            turn.innerText = 'X'   
-        }
-    }    
-}
-
-
-
-
-
-
-
-/*let pos1 = document.getElementById('pos1')
-pos1.addEventListener('click', item1Click)
-function item1Click() {  
-    if(turn.innerText == 'X') {
-        pos1.innerHTML = '<p>X</p>' 
-        pos1.style.color = 'blue' 
-        turn.innerText = 'O'   
-    } else if (turn.innerText == 'O') {
-        pos1.innerHTML = '<p>O</p>'
-        pos1.style.color = 'red'  
-        turn.innerText = 'X'   
-    }
-    
-}
-
-let pos2 = document.getElementById('pos2')
-pos2.addEventListener('click', item2Click)
-function item2Click() {   
-    if(turn.innerText == 'X') {
-        pos2.innerHTML = '<p>X</p>' 
-        pos2.style.color = 'blue'  
-        turn.innerText = 'O'     
-    } else if (turn.innerText == 'O') {
-        pos2.innerHTML = '<p>O</p>'
-        pos2.style.color = 'red'  
-        turn.innerText = 'X'   
+function item1() {
+    if (turn.innerText == 'X') {
+        pos1.value = 'X'
+        pos1.disabled = true;
+        pos1.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos1.value = 'O'
+        pos1.disabled = true;
+        pos1.style.color = 'red'
+        turn.innerText = 'X'
     }
 }
 
-let pos3 = document.getElementById('pos3')
-pos3.addEventListener('click', item3Click)
-function item3Click() {   
-    if(turn.innerText == 'X') {
-        pos3.innerHTML = '<p>X</p>' 
-        pos3.style.color = 'blue' 
-        turn.innerText = 'O'      
-    } else if (turn.innerText == 'O') {
-        pos3.innerHTML = '<p>O</p>'
-        pos3.style.color = 'red' 
-        turn.innerText = 'X'    
+function item2() {
+    if (turn.innerText == 'X') {
+        pos2.value = 'X'
+        pos2.disabled = true;
+        pos2.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos2.value = 'O'
+        pos2.disabled = true;
+        pos2.style.color = 'red'
+        turn.innerText = 'X'
     }
 }
 
-let pos4 = document.getElementById('pos4')
-pos4.addEventListener('click', item4Click)
-function item4Click() {   
-    if(turn.innerText == 'X') {
-        pos4.innerHTML = '<p>X</p>' 
-        pos4.style.color = 'blue' 
-        turn.innerText = 'O'      
-    } else if (turn.innerText == 'O') {
-        pos4.innerHTML = '<p>O</p>'
-        pos4.style.color = 'red'  
-        turn.innerText = 'X'   
+
+function item3() {
+    if (turn.innerText == 'X') {
+        pos3.value = 'X'
+        pos3.disabled = true;
+        pos3.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos3.value = 'O'
+        pos3.disabled = true;
+        pos3.style.color = 'red'
+        turn.innerText = 'X'
     }
 }
 
-let pos5 = document.getElementById('pos5')
-pos5.addEventListener('click', item5Click)
-function item5Click() {   
-    if(turn.innerText == 'X') {
-        pos5.innerHTML = '<p>X</p>' 
-        pos5.style.color = 'blue' 
-        turn.innerText = 'O'      
-    } else if (turn.innerText == 'O') {
-        pos5.innerHTML = '<p>O</p>'
+function item4() {
+    if (turn.innerText == 'X') {
+        pos4.value = 'X'
+        pos4.disabled = true;
+        pos4.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos4.value = 'O'
+        pos4.disabled = true;
+        pos4.style.color = 'red'
+        turn.innerText = 'X'
+    }
+}
+
+function item5() {
+    if (turn.innerText == 'X') {
+        pos5.value = 'X'
+        pos5.disabled = true;
+        pos5.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos5.value = 'O'
+        pos5.disabled = true;
         pos5.style.color = 'red'
-        turn.innerText = 'X'     
-    } 
-}
-
-let pos6 = document.getElementById('pos6')
-pos6.addEventListener('click', item6Click)
-function item6Click() {   
-    if(turn.innerText == 'X') {
-        pos6.innerHTML = '<p>X</p>' 
-        pos6.style.color = 'blue'  
-        turn.innerText = 'O'     
-    } else if (turn.innerText == 'O') {
-        pos6.innerHTML = '<p>O</p>'
-        pos6.style.color = 'red'  
-        turn.innerText = 'X'   
+        turn.innerText = 'X'
     }
 }
 
-let pos7 = document.getElementById('pos7')
-pos7.addEventListener('click', item7Click)
-function item7Click() {   
-    if(turn.innerText == 'X') {
-        pos7.innerHTML = '<p>X</p>' 
-        pos7.style.color = 'blue' 
-        turn.innerText = 'O'      
-    } else if (turn.innerText == 'O') {
-        pos7.innerHTML = '<p>O</p>'
-        pos7.style.color = 'red' 
-        turn.innerText = 'X'    
+function item6() {
+    if (turn.innerText == 'X') {
+        pos6.value = 'X'
+        pos6.disabled = true;
+        pos6.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos6.value = 'O'
+        pos6.disabled = true;
+        pos6.style.color = 'red'
+        turn.innerText = 'X'
     }
 }
 
-let pos8 = document.getElementById('pos8')
-pos8.addEventListener('click', item8Click)
-function item8Click() {   
-    if(turn.innerText == 'X') {
-        pos8.innerHTML = '<p>X</p>' 
-        pos8.style.color = 'blue' 
-        turn.innerText = 'O'      
-    } else if (turn.innerText == 'O') {
-        pos8.innerHTML = '<p>O</p>'
-        pos8.style.color = 'red'  
-        turn.innerText = 'X'   
+function item7() {
+    if (turn.innerText == 'X') {
+        pos7.value = 'X'
+        pos7.disabled = true;
+        pos7.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos7.value = 'O'
+        pos7.disabled = true;
+        pos7.style.color = 'red'
+        turn.innerText = 'X'
     }
 }
 
-let pos9 = document.getElementById('pos9')
-pos9.addEventListener('click', item9Click)
-function item9Click() {   
-    if(turn.innerText == 'X') {
-        pos9.innerHTML = '<p>X</p>' 
-        pos9.style.color = 'blue'  
-        turn.innerText = 'O'     
-    } else if (turn.innerText == 'O') {
-        pos9.innerHTML = '<p>O</p>'
-        pos9.style.color = 'red'  
-        turn.innerText = 'X'   
-    } 
-}*/
+function item8() {
+    if (turn.innerText == 'X') {
+        pos8.value = 'X'
+        pos8.disabled = true;
+        pos8.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos8.value = 'O'
+        pos8.disabled = true;
+        pos8.style.color = 'red'
+        turn.innerText = 'X'
+    }
+}
+
+function item9() {
+    if (turn.innerText == 'X') {
+        pos9.value = 'X'
+        pos9.disabled = true;
+        pos9.style.color = 'blue'
+        turn.innerText = 'O'
+    } else if (turn.innerHTML == 'O') {
+        pos9.value = 'O'
+        pos9.disabled = true;
+        pos9.style.color = 'red'
+        turn.innerText = 'X'
+    }
+}
 
